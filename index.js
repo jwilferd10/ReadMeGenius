@@ -1,94 +1,153 @@
-// First and foremost ensure that npm is installed and ready to go and that inquirer up and running
-// Then we'll want to prepare our global require's
-// Then work on the list of questions we'll ask the users. Try to play around with input or checkboxes and see how that'll turn out
-// Somewhere nearing the final stages of this project is setting up the 
-
-
 // Global require's
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./src/generateMarkdown.js')
 
 // Array of questions to ask the user
-const promptQuestions = () => {
-    console.log(`
-    =================
-    Add README Info
-    =================
-    `);
-    
-    return inquirer.prompt([   
+const questions =
+    [
+        // Project name
         {
-            // Title
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'title',
+            message: 'What is the title of the project? (Required)',
+            validate: titleInput => {
+                if (titleInput) {
+                    return true;
+                } else {
+                    console.log('You need to enter a title to continue!');
+                    return false;
+                }
+            }
         },
+        // Description of project
         {
-            // Description
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'description',
+            message: 'Provide a description of the project (Required)',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    return true;
+                } else {
+                    console.log('You need to provide a project description!');
+                    return false;
+                }
+            }
         },
+        // Installation Instructions
         {
-            // Installation Instructions
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'installation',
+            message: 'How do you install your project? (Required)',
+            validate: installationInput => {
+                if (installationInput) {
+                    return true;
+                } else {
+                    console.log('You need to provide installation info to continue!');
+                    return false;
+                }
+            }
         },
+        // Usage Information
         {
-            // Usage Information
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'usage',
+            message: 'How do you use this project? (Required)',
+            validate: usageInput => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('You need to provide information on how to use project!');
+                    return false;
+                }
+            }
         },
+        // Contribution Guidlines
         {
-            // Contribution Guidlines
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'contribution',
+            message: 'How should people contribute to this project? (Required)',
+            validate: contributionInput => {
+                if (contributionInput) {
+                    return true;
+                } else {
+                    console.log('You need to provide information on how to contribute to the project!');
+                    return false;
+                }
+            }
         },
+        // Test Instructions 
         {
-            // Test Instructions
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'testing',
+            message: 'How do you test this project? (Required)',
+            validate: testingInput => {
+                if (testingInput) {
+                    return true;
+                } else {
+                    console.log('You need to describe how to test this project!');
+                    return false;
+                }
+            }
         },
+        // License Options
         {
-            // Checkbox, License Options
-            type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            type: 'checkbox',
+            name: 'licensing',
+            message: 'Choose a license for your project (Required)', 
+            choices: ['Apache License 2.0', 'MIT License', 'Mozilla Public License 2.0', 'GNU General Public License (GPL)', 'Common Development and Distribution License', 'None'],
+            validate: licensingInput => {
+                if (licensingInput) {
+                    return true;
+                } else {
+                    console.log('You must pick a license for the project!');
+                    return false;
+                }
+            }
         },
+        // Github Username
         {
-            // Github Username (Contained in the section titled Questions, links to github profile)
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'github',
+            message: 'Enter your GitHub Username (Required)',
+            validate: githubInput => {
+              if (githubInput) {
+                return true;
+              } else {
+                console.log('Please enter your GitHub username!');
+                return false;
+              }
+            }
         },
+        // Email Address
         {
-            // Email Address (Contained in the section titled Questions)
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'email',
+            message: 'Would you like to include your email?',
         },
-        {
-            // Table of Contents (Will Require Work)
-            type: 'input',
-            name: 'name',
-            message: 'What is your name?'
-        }
-    ]);    
+    ];
+    // .then(projectData => {
+    //     // readmeData.projects.push(projectData);
+    //     writeToFile(projectData)
+    //     console.log('Success! Information transferred to the README, yay!')
+    // }) 
+
+// Function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err) throw err;
+        console.log('Success! Information transferred to the README!')
+    })
 };
 
-// function to write README file
-function writeToFile(fileName, data) {
-}
-
-// function to initialize program
+// Function to initialize app
 function init() {
-    inquirer.prompt(promptQuestions)
-}
+    inquirer.prompt(questions)
+    .then (function (userInput) {
+        console.log(userInput)
+        writeToFile("README.md", generateMarkdown(userInput));
+    });
+};
 
-// function call to initialize program
+// Function call to initialize app
 init();
