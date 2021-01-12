@@ -138,10 +138,10 @@ function writeToFile(fileName, data) {
 // Function to initialize app
 function init() {
     inquirer.prompt(questions)
-        .then(function (userInput) {
-            console.log(userInput)
-            writeToFile("README.md", generateMarkdown(userInput));
-        });
+    .then(function (userInput) {
+        console.log(userInput)
+        writeToFile("README.md", generateMarkdown(userInput));
+    });
 };
 
 // Function call to initialize app
