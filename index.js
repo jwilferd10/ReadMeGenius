@@ -95,7 +95,7 @@ const questions =
             type: 'checkbox',
             name: 'licensing',
             message: 'Choose a license for your project (Required)', 
-            choices: ['Apache License 2.0', 'MIT License', 'Mozilla Public License 2.0', 'GNU General Public License (GPL)', 'Common Development and Distribution License', 'None'],
+            choices: ['Apache', 'MIT', 'Mozilla-Public', 'GNU-General-Public', 'Common-Development-and Distribution', 'None'],
             validate: licensingInput => {
                 if (licensingInput) {
                     return true;
@@ -129,15 +129,16 @@ const questions =
     // .then(projectData => {
     //     // readmeData.projects.push(projectData);
     //     writeToFile(projectData)
-    //     console.log('Success! Information transferred to the README, yay!')
+    //     console.log('Success! Information transferred to the README!)
     // }) 
 
 // Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
-        if (err) throw err;
+        if (err) 
+        throw err;
         console.log('Success! Information transferred to the README!')
-    })
+    });
 };
 
 // Function to initialize app
