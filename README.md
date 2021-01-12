@@ -11,6 +11,9 @@
   - [Testing](#testing)
   - [Additional Info](#additional-info)
 
+  ## Visual Presentation
+  ![Professional Readme Generator Demo](demo/readme-generator.gif)
+
   ## Description:
   Easily creating README.MD's in a jippy
 
