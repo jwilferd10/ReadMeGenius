@@ -1,7 +1,6 @@
-// Global require's
-const inquirer = require('inquirer');
-const fs = require('fs');
-const generateMarkdown = require('./src/generateMarkdown.js')
+import { inquirer } from inquirer;
+import { generateMarkdown } from ('./src/generateMarkdown.js');
+import { fs } from 'fs';
 
 // Array of questions to ask the user
 const questions = [
