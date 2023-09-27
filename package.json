@@ -1,5 +1,5 @@
 {
-  "name": "static-site",
+  "name": "professional-readme-generator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^6.5.2"
-  }
+    "inquirer": "^9.2.8"
+  },
+  "type":"module"
 }
