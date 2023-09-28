@@ -8,8 +8,12 @@ const initializeApp = async () => {
         // Let userResponse be what promptUser collects
         const userResponse = await promptUser();
 
+        // Generate the README using userResponse data
+        const fileContent = generateMarkdown(userResponse);
+
         // Write userResponse to the file
-        await writeToFile(userResponse);
+        await writeToFile(fileContent);
+
 
         console.log('README File successfully generated.');
     } catch (error) {
