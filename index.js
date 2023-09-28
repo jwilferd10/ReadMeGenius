@@ -1,6 +1,6 @@
 // Imports
-import { generateMarkdown } from ('./src/generateMarkdown.js');
-import { promptUser } from ('./src/promptUser.js');
+import { generateMarkdown } from './src/generateMarkdown.js';
+import { promptUser } from './src/promptUser.js';
 import { writeToFile } from './utils/writeFile.js';
 
 const initializeApp = async () => {

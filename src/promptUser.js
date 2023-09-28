@@ -1,4 +1,4 @@
-import { inquirer } from inquirer;
+import inquirer from inquirer;
 
 // Array of questions to ask the user
 export const promptUser = () => {

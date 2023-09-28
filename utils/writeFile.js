@@ -1,10 +1,10 @@
-import { fs } from 'fs';
+import fs from 'fs';
 
 // Function to write README file
 export const writeToFile = fileContent => {
     fs.writeFile('./dist/README.md', fileContent, err => {
         if (err) {
-            rejects(err);
+            reject(err);
             return;
         }
 
