@@ -1,5 +1,5 @@
 // function to generate markdown for README
-export function generateMarkdown(data) {
+export const generateMarkdown = (data) => {
   return `# ${data.title}
 
   ## Licensing:
