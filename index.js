@@ -1,16 +1,20 @@
-import { inquirer } from inquirer;
+// Imports
 import { generateMarkdown } from ('./src/generateMarkdown.js');
-import { questions } from ('./src/promptUser.js');
+import { promptUser } from ('./src/promptUser.js');
 import { writeToFile } from './utils/writeFile.js';
 
-// Function to initialize app
-function init() {
-    inquirer.prompt(questions)
-    .then(function (userInput) {
-        console.log(userInput)
-        writeToFile("README.md", generateMarkdown(userInput));
-    });
-};
+const initializeApp = async () => {
+    try {
+        // Let userResponse be what promptUser collects
+        const userResponse = await promptUser();
 
-// Function call to initialize app
-init();
+        // Write userResponse to the file
+        await writeToFile(userResponse);
+
+        console.log('README File successfully generated.');
+    } catch (error) {
+        console.error('An error occured:', error.message);
+    }
+}
+
+initializeApp();
