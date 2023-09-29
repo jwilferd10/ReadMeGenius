@@ -2,9 +2,17 @@ import inquirer from 'inquirer';
 
 // Array of questions to ask the user
 export const promptUser = () => {
+
+    console.log(`
+        ===================================================
+        Thanks for using the Professional Readme Generator!
+        ===================================================
+    `);
+
+    console.log("Let's start with a few questions:")
     return inquirer.prompt([
         {
-            // File Name
+            // File Name (Required)
             type: 'input',
             name: 'title',
             message: 'What is the title of the project? (Required)',
@@ -25,7 +33,7 @@ export const promptUser = () => {
             when: ({ fileTitle }) => fileTitle,
         },
         {
-            // File Description
+            // File Description (Required)
             type: 'input',
             name: 'description',
             message: 'Provide a description of the project (Required)',
@@ -34,11 +42,9 @@ export const promptUser = () => {
         {
             // User Story (Optional)
             type: 'confirm', 
-            name: 'userStory',
+            name: 'confirmUserStory',
             message: 'Would you like to provide a User Story for this file??',
             default: true,
-
-            // Create the code that'd prompt user these questions
         }, 
         {
             // Resources Used (Optional)
@@ -47,64 +53,22 @@ export const promptUser = () => {
             message: 'Would you like to highlight any resources used?',
             default: true,
         },
-        // {
-            // // Resources Used
-            // type: 'input',
-            // name: 'resourcesUsed',
-            // message: 'How do you install your project? (Required)',
-            // validate: installationInput => {
-            //     if (installationInput) {
-            //         return true;
-            //     } else {
-            //         console.log('You need to provide installation info to continue!');
-            //         return false;
-            //     }
-            // }
-        // },
-        // {
-        //     // Usage Information
-        //     type: 'input',
-        //     name: 'usage',
-        //     message: 'How do you use this project? (Required)',
-        //     validate: usageInput => {
-        //         if (usageInput) {
-        //             return true;
-        //         } else {
-        //             console.log('You need to provide information on how to use project!');
-        //             return false;
-        //         }
-        //     }
-        // },
-        // {
-        //     // Contribution Guidlines
-        //     type: 'input',
-        //     name: 'contribution',
-        //     message: 'How should people contribute to this project? (Required)',
-        //     validate: contributionInput => {
-        //         if (contributionInput) {
-        //             return true;
-        //         } else {
-        //             console.log('You need to provide information on how to contribute to the project!');
-        //             return false;
-        //         }
-        //     }
-        // },
-        // // Test Instructions 
-        // {
-        //     type: 'input',
-        //     name: 'testing',
-        //     message: 'How do you test this project? (Required)',
-        //     validate: testingInput => {
-        //         if (testingInput) {
-        //             return true;
-        //         } else {
-        //             console.log('You need to describe how to test this project!');
-        //             return false;
-        //         }
-        //     }
-        // },
-        // Github Username
         {
+            // Usage
+            type: 'confirm',
+            name: 'confirmUsage',
+            message: 'Would you like to include a Usage section?',
+            default: true,
+        },
+        {
+            // 
+            type: 'confirm',
+            name: 'confirmContributors',
+            message: 'Would you like to include a contributors list?',
+            default: true,
+        },
+        {
+            // Github Username
             type: 'input',
             name: 'github',
             message: 'Enter your GitHub Username (Required)',
@@ -117,8 +81,8 @@ export const promptUser = () => {
                 }
             }
         },
-        // Email Address
         {
+            // Email Address
             type: 'input',
             name: 'email',
             message: 'Would you like to include your email?',
