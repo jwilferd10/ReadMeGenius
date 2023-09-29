@@ -34,58 +34,58 @@ export const promptUser = () => {
         },
         {
             // File Description (Required)
-            type: 'input',
-            name: 'description',
-            message: 'Provide a description of the project (Required)',
-            validate: descriptionInput => descriptionInput ? true : 'Please provide a description for your file!',
-        },
-        {
-            // User Story (Optional)
-            type: 'confirm', 
-            name: 'confirmUserStory',
-            message: 'Would you like to provide a User Story for this file??',
-            default: true,
-        }, 
-        {
-            // Resources Used (Optional)
             type: 'confirm',
-            name: 'confirmResourcesUsed',
-            message: 'Would you like to highlight any resources used?',
+            name: 'confirmDescription',
+            message: 'Would you like to include a description for your file?',
             default: true,
         },
-        {
-            // Usage
-            type: 'confirm',
-            name: 'confirmUsage',
-            message: 'Would you like to include a Usage section?',
-            default: true,
-        },
-        {
-            // 
-            type: 'confirm',
-            name: 'confirmContributors',
-            message: 'Would you like to include a contributors list?',
-            default: true,
-        },
-        {
-            // Github Username
-            type: 'input',
-            name: 'github',
-            message: 'Enter your GitHub Username (Required)',
-            validate: githubInput => {
-                if (githubInput) {
-                    return true;
-                } else {
-                    console.log('Please enter your GitHub username!');
-                    return false;
-                }
-            }
-        },
-        {
-            // Email Address
-            type: 'input',
-            name: 'email',
-            message: 'Would you like to include your email?',
-        },
+        // {
+        //     // User Story (Optional)
+        //     type: 'confirm', 
+        //     name: 'confirmUserStory',
+        //     message: 'Would you like to provide a User Story for this file??',
+        //     default: true,
+        // }, 
+        // {
+        //     // Resources Used (Optional)
+        //     type: 'confirm',
+        //     name: 'confirmResourcesUsed',
+        //     message: 'Would you like to highlight any resources used?',
+        //     default: true,
+        // },
+        // {
+        //     // Usage
+        //     type: 'confirm',
+        //     name: 'confirmUsage',
+        //     message: 'Would you like to include a Usage section?',
+        //     default: true,
+        // },
+        // {
+        //     // 
+        //     type: 'confirm',
+        //     name: 'confirmContributors',
+        //     message: 'Would you like to include a contributors list?',
+        //     default: true,
+        // },
+        // {
+        //     // Github Username
+        //     type: 'input',
+        //     name: 'github',
+        //     message: 'Enter your GitHub Username (Required)',
+        //     validate: githubInput => {
+        //         if (githubInput) {
+        //             return true;
+        //         } else {
+        //             console.log('Please enter your GitHub username!');
+        //             return false;
+        //         }
+        //     }
+        // },
+        // {
+        //     // Email Address
+        //     type: 'input',
+        //     name: 'email',
+        //     message: 'Would you like to include your email?',
+        // },
     ]);
 };

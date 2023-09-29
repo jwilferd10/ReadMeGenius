@@ -38,16 +38,19 @@ export const promptDescription = async (readmeData) => {
 
     // While true keep looping through the function.
     while (true) {
-        const readmeData = await inquirer.prompt(descriptionQuestions);
+        const descriptionData = await inquirer.prompt(descriptionQuestions);
         
+
+        // console.log(readmeData);
+
         // Collect the data
         readmeData.description.push({
-            header: readmeData.descriptionHeader,
-            text: readmeData.descriptionText,
+            header: descriptionData.descriptionHeader,
+            text: descriptionData.descriptionText,
         });
         
         // Exit out of the loop when false
-        if (!readmeData.confirmAddDescription) {
+        if (!descriptionData.confirmAddDescription) {
             break;
         }
     }

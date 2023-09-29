@@ -2,11 +2,17 @@
 import { generateMarkdown } from './src/generateMarkdown.js';
 import { promptUser } from './src/promptUser.js';
 import { writeToFile } from './utils/writeFile.js';
+import { promptDescription } from './src/promptDescription.js'
 
 const initializeApp = async () => {
     try {
         // Let userResponse be what promptUser collects
         const userResponse = await promptUser();
+
+        // Run promptDescription if userResponse is true
+        if (userResponse.confirmDescription) {
+            await promptDescription(userResponse);
+        }
 
         // Generate the README using userResponse data
         const fileContent = generateMarkdown(userResponse);
