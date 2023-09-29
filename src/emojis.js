@@ -1,0 +1,1 @@
+// Create an array of emojis that can potentially be used.
