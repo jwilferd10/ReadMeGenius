@@ -1,6 +1,6 @@
 // function to generate markdown for README
-export const generateMarkdown = (data) => {
-  return `# ${data.title}
+export const generateMarkdown = (readmeData) => {
+  return `# ${readmeData.title}
 
   ## Licensing:
   [![license](https://img.shields.io/badge/license-${data.licensing}-blue)](https://shields.io)
@@ -14,24 +14,21 @@ export const generateMarkdown = (data) => {
   - [Additional Info](#additional-info)
 
   ## Description:
-  ${data.description}
+  ${readmeData.description}
 
   ## Installation:
-  ${data.installation}
+  ${readmeData.installation}
 
   ## Usage:
-  ${data.usage}
-
-  ## License:
-  ${data.licensing}
+  ${readmeData.usage}
 
   ## Contribution:
-  ${data.contribution}
+  ${readmeData.contribution}
 
   ## Testing:
-  ${data.testing}
+  ${readmeData.testing}
 
   ## Additional Info:
-  - Github: [${data.github}](https://github.com/${data.github})
-  - Email: ${data.email} `;
+  - Github: [${readmeData.github}](https://github.com/${readmeData.github})
+  - Email: ${readmeData.email} `;
 }
