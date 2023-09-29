@@ -1,3 +1,5 @@
+// Create a reusable function that generates new paragraph content
+
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
   return `# ${readmeData.title}
