@@ -1,42 +1,37 @@
 // Create a reusable function that generates new paragraph content
-const generateDescriptionMD = (descriptionArray) => {
+const generateMarkdownSection = (dataArray, templateFunction) => {
   // Return an empty string if there are no descriptions
-  if (!descriptionArray || descriptionArray.length == 0) {
+  if (!dataArray || dataArray.length == 0) {
     return '';
   }
-  
-  // Initialize an empty string to store the markdown in
-  let descriptionMarkdown = '';
-  
-  // Loop through the description array and generate markdown for each sub-section
-  descriptionArray.forEach((descriptionData) => {
-    // Concatenate the markdown sub-sections
-    descriptionMarkdown += `
-      ## ${descriptionData.header}
-      ${descriptionData.text}
-    `;
-  });
 
-  return descriptionMarkdown;
+  // Initialize an empty string to store the markdown in
+  let sectionMarkdown = '';
+
+  // Loop through the array and generate markdown for each sub-section
+  dataArray.forEach((data) => {
+    // Concatenate the markdown sub-sections
+    sectionMarkdown += templateFunction(data);
+  })
+
+  return sectionMarkdown;
+}
+
+// Generates the Description section
+const generateDescriptionMD = (descriptionData) => {
+  return `
+    ## ${descriptionData.header}
+    ${descriptionData.text}
+  `;
 };
 
 // Create a function that returns the userStory 
-const generateStoryMD = (userStoryArray) => {
-  if (!userStoryArray || userStoryArray.length == 0) {
-    return '';
-  }
-
-  let userStoryMarkdown = '';
-
-  userStoryArray.forEach((userStoryData) => {
-    userStoryMarkdown += `
-      - ${userStoryData.when}
-        - ${userStoryData.then}
-    `;
-  });
-
-  return userStoryMarkdown;
-}
+const generateStoryMD = (userStoryData) => {
+  return `
+    - ${userStoryData.when}
+      - ${userStoryData.then}
+  `;
+};
 
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
@@ -51,10 +46,10 @@ export const generateMarkdown = (readmeData) => {
   - [Additional Info](#additional-info)
 
   ## Description:
-  ${generateDescriptionMD(readmeData.description)}
+  ${generateMarkdownSection(readmeData.description, generateDescriptionMD)};
 
   ## User Story
-  ${generateStoryMD(readmeData.userStory)}
+  ${generateMarkdownSection(readmeData.userStory, generateStoryMD)};
 
   ## Installation:
   ${readmeData.installation}
