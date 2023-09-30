@@ -17,14 +17,14 @@ export const promptDescription = async (readmeData) => {
             // Description Header
             type: 'input',
             name: 'descriptionHeader',
-            message: 'Provide a header text',
+            message: 'Provide a header text:',
             validate: descriptionHeader => descriptionHeader ? true : 'Please provide a header for this section!',
         },
         {
             // Description Text
             type: 'input',
             name: 'descriptionText',
-            message: 'Provide a description for your file',
+            message: 'Provide a description for your file:',
             validate: descriptionText => descriptionText ? true : 'Please provide a description for your file!',
         },
         {
@@ -47,7 +47,7 @@ export const promptDescription = async (readmeData) => {
         };
 
         readmeData.description.push(descriptionObject);
-        
+
         // Exit out of the loop when false
         if (!descriptionData.confirmAddDescription) {
             break;
