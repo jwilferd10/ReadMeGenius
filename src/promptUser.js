@@ -18,20 +18,20 @@ export const promptUser = () => {
             message: 'What is the title of the project? (Required)',
             validate: titleInput => titleInput ?  true : 'Please provide a title for the file!',
         },
-        {
-            // Confirm file Subtitle (Optional)
-            type: 'confirm',
-            name: 'fileTitle',
-            message: 'Would you like to include a subtitle underneath your file name?',
-            default: true,
-        },
-        {
-            // Prompt subtitle iput
-            type: 'input',
-            name: 'subtitleText',
-            message: 'Enter your desired subtitle:',
-            when: ({ fileTitle }) => fileTitle,
-        },
+        // {
+        //     // Confirm file Subtitle (Optional)
+        //     type: 'confirm',
+        //     name: 'fileTitle',
+        //     message: 'Would you like to include a subtitle underneath your file name?',
+        //     default: true,
+        // },
+        // {
+        //     // Prompt subtitle iput
+        //     type: 'input',
+        //     name: 'subtitleText',
+        //     message: 'Enter your desired subtitle:',
+        //     when: ({ fileTitle }) => fileTitle,
+        // },
         {
             // File Description (Required)
             type: 'confirm',

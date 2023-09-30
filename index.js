@@ -7,11 +7,11 @@ import { promptDescription } from './src/promptDescription.js'
 const initializeApp = async () => {
     try {
         // Let userResponse be what promptUser collects
-        const userResponse = await promptUser();
+        let userResponse = await promptUser();
 
         // Run promptDescription if userResponse is true
         if (userResponse.confirmDescription) {
-            await promptDescription(userResponse);
+            userResponse = await promptDescription(userResponse);
         }
 
         // Generate the README using userResponse data
