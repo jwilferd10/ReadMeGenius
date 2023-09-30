@@ -20,6 +20,23 @@ const generateDescriptionMD = (descriptionArray) => {
   return descriptionMarkdown;
 };
 
+// Create a function that returns the userStory 
+const generateStoryMD = (userStoryArray) => {
+  if (!userStoryArray || userStoryArray.length == 0) {
+    return '';
+  }
+
+  let userStoryMarkdown = '';
+
+  userStoryArray.forEach((userStoryData) => {
+    userStoryMarkdown += `
+      - ${userStoryData.when}
+        - ${userStoryData.then}
+    `;
+  });
+
+  return userStoryMarkdown;
+}
 
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
@@ -35,6 +52,9 @@ export const generateMarkdown = (readmeData) => {
 
   ## Description:
   ${generateDescriptionMD(readmeData.description)}
+
+  ## User Story
+  ${generateStoryMD(readmeData.userStory)}
 
   ## Installation:
   ${readmeData.installation}

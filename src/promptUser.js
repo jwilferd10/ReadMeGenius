@@ -32,20 +32,20 @@ export const promptUser = () => {
         //     message: 'Enter your desired subtitle:',
         //     when: ({ fileTitle }) => fileTitle,
         // },
-        {
-            // File Description (Required)
-            type: 'confirm',
-            name: 'confirmDescription',
-            message: 'Would you like to include a description for your file?',
-            default: true,
-        },
         // {
-        //     // User Story (Optional)
-        //     type: 'confirm', 
-        //     name: 'confirmUserStory',
-        //     message: 'Would you like to provide a User Story for this file??',
+        //     // File Description (Required)
+        //     type: 'confirm',
+        //     name: 'confirmDescription',
+        //     message: 'Would you like to include a description for your file?',
         //     default: true,
-        // }, 
+        // },
+        {
+            // User Story (Optional)
+            type: 'confirm', 
+            name: 'confirmUserStory',
+            message: 'Would you like to provide a User Story for this file??',
+            default: true,
+        }, 
         // {
         //     // Resources Used (Optional)
         //     type: 'confirm',
