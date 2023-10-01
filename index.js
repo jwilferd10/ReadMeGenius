@@ -22,7 +22,6 @@ const initializeApp = async () => {
 
         if (userResponse.confirmResourcesUsed) {
             userResponse = await promptResourcesUsed(userResponse);
-            prompt
         }
 
         // Generate the README using userResponse data

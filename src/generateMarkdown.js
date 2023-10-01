@@ -33,6 +33,14 @@ const generateStoryMD = (userStoryData) => {
   `;
 };
 
+
+// Create a function that returns resourcesUsed
+const generateResourcesUsed = (resourcesUsedData) => {
+  return `
+    - ${resourcesUsedData.resource}
+  `;
+};
+
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
   return `# ${readmeData.title}
@@ -45,14 +53,14 @@ export const generateMarkdown = (readmeData) => {
   - [Testing](#testing)
   - [Additional Info](#additional-info)
 
-  ## Description:
-  ${generateMarkdownSection(readmeData.description, generateDescriptionMD)};
+  ## Description
+  ${generateMarkdownSection(readmeData.description, generateDescriptionMD)}
 
   ## User Story
-  ${generateMarkdownSection(readmeData.userStory, generateStoryMD)};
+  ${generateMarkdownSection(readmeData.userStory, generateStoryMD)}
 
-  ## Installation:
-  ${readmeData.installation}
+  ## Resources Used
+  ${generateMarkdownSection(readmeData.resourcesUsed, generateResourcesUsed)}
 
   ## Usage:
   ${readmeData.usage}
