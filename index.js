@@ -5,6 +5,7 @@ import { writeToFile } from './utils/writeFile.js';
 import { promptDescription } from './src/promptDescription.js'
 import { promptUserStory } from './src/promptUserStory.js';
 import { promptResourcesUsed } from './src/promptResourcesUsed.js';
+import { promptUsage } from './src/promptUsage.js';
 
 const initializeApp = async () => {
     try {
@@ -22,6 +23,10 @@ const initializeApp = async () => {
 
         if (userResponse.confirmResourcesUsed) {
             userResponse = await promptResourcesUsed(userResponse);
+        }
+
+        if (userResponse.confirmUsage) {
+            userResponse = await promptUsage(userResponse);
         }
 
         // Generate the README using userResponse data

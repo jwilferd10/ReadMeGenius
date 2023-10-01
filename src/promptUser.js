@@ -46,20 +46,20 @@ export const promptUser = () => {
         //     message: 'Would you like to provide a User Story for this file??',
         //     default: true,
         // }, 
-        {
-            // Resources Used (Optional)
-            type: 'confirm',
-            name: 'confirmResourcesUsed',
-            message: 'Would you like to highlight any resources used?',
-            default: true,
-        },
         // {
-        //     // Usage
+        //     // Resources Used (Optional)
         //     type: 'confirm',
-        //     name: 'confirmUsage',
-        //     message: 'Would you like to include a Usage section?',
+        //     name: 'confirmResourcesUsed',
+        //     message: 'Would you like to highlight any resources used?',
         //     default: true,
         // },
+        {
+            // Usage
+            type: 'confirm',
+            name: 'confirmUsage',
+            message: 'Would you like to include a Usage section?',
+            default: true,
+        },
         // {
         //     // 
         //     type: 'confirm',

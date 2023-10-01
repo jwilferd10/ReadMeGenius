@@ -41,6 +41,12 @@ const generateResourcesUsed = (resourcesUsedData) => {
   `;
 };
 
+const generateUsage = (usageData) => {
+  return `
+    ${usageData.usageText}
+  `;
+}
+
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
   return `# ${readmeData.title}
@@ -63,7 +69,7 @@ export const generateMarkdown = (readmeData) => {
   ${generateMarkdownSection(readmeData.resourcesUsed, generateResourcesUsed)}
 
   ## Usage:
-  ${readmeData.usage}
+  ${generateMarkdownSection(readmeData.usage, generateUsage)}
 
   ## Contribution:
   ${readmeData.contribution}
