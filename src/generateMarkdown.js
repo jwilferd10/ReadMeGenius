@@ -41,9 +41,17 @@ const generateResourcesUsed = (resourcesUsedData) => {
   `;
 };
 
+// Function to generate Usage markdown
 const generateUsage = (usageData) => {
   return `
     ${usageData.usageText}
+  `;
+}
+
+// Function to generate contributors list.
+const generateContributors = (contributorsData) => {
+  return `
+    - ${contributorsData.text}
   `;
 }
 
@@ -72,7 +80,7 @@ export const generateMarkdown = (readmeData) => {
   ${generateMarkdownSection(readmeData.usage, generateUsage)}
 
   ## Contribution:
-  ${readmeData.contribution}
+  ${generateMarkdownSection(readmeData.contributors, generateContributors)}
 
   ## Testing:
   ${readmeData.testing}

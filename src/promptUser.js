@@ -53,20 +53,20 @@ export const promptUser = () => {
         //     message: 'Would you like to highlight any resources used?',
         //     default: true,
         // },
-        {
-            // Usage
-            type: 'confirm',
-            name: 'confirmUsage',
-            message: 'Would you like to include a Usage section?',
-            default: true,
-        },
         // {
-        //     // 
+        //     // Usage
         //     type: 'confirm',
-        //     name: 'confirmContributors',
-        //     message: 'Would you like to include a contributors list?',
+        //     name: 'confirmUsage',
+        //     message: 'Would you like to include a Usage section?',
         //     default: true,
         // },
+        {
+            // 
+            type: 'confirm',
+            name: 'confirmContributors',
+            message: 'Would you like to include a contributors list?',
+            default: true,
+        },
         // {
         //     // Github Username
         //     type: 'input',

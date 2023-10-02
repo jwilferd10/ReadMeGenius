@@ -1,6 +1,6 @@
 import inquirer from 'inquirer';
 
-export const promptDescription = async (readmeData) => {
+export const promptContributors = async (readmeData) => {
     if (!readmeData.contributors) {
         readmeData.contributors = [];
     }
