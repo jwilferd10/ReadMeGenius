@@ -1,5 +1,5 @@
 // Create a reusable function that generates new paragraph content
-const generateMarkdownSection = (dataArray, templateFunction) => {
+const generateMarkdownSection = (dataArray, templateFunction, sectionHeader) => {
   // Return an empty string if there are no descriptions
   if (!dataArray || dataArray.length == 0) {
     return '';
@@ -7,6 +7,9 @@ const generateMarkdownSection = (dataArray, templateFunction) => {
 
   // Initialize an empty string to store the markdown in
   let sectionMarkdown = '';
+
+  // Concatenate the Section Header
+  sectionMarkdown += `## ${sectionHeader}\n`
 
   // Loop through the array and generate markdown for each sub-section
   dataArray.forEach((data) => {
@@ -74,23 +77,15 @@ export const generateMarkdown = (readmeData) => {
   - [Contributors](#contributors)
   - [Contact Information](#contact-information)
 
-  ## Description
-  ${generateMarkdownSection(readmeData.description, generateDescriptionMD)}
+  ${generateMarkdownSection(readmeData.description, generateDescriptionMD, 'Description')}
 
-  ## User Story
-  ${generateMarkdownSection(readmeData.userStory, generateStoryMD)}
+  ${generateMarkdownSection(readmeData.userStory, generateStoryMD, 'User Story')}
 
-  ## Resources Used
-  ${generateMarkdownSection(readmeData.resourcesUsed, generateResourcesUsed)}
+  ${generateMarkdownSection(readmeData.resourcesUsed, generateResourcesUsed, 'Resources Used')}
 
-  ## Usage:
-  ${generateMarkdownSection(readmeData.usage, generateUsage)}
+  ${generateMarkdownSection(readmeData.usage, generateUsage, 'Usage')}
 
-  ## Contribution:
-  ${generateMarkdownSection(readmeData.contributors, generateContributors)}
+  ${generateMarkdownSection(readmeData.contributors, generateContributors, 'Contributors')}
 
-  ## Contact Information:
-  ${generateMarkdownSection(readmeData.contactInfo, generateContactInfo)}
-  
-  `;
+  ${generateMarkdownSection(readmeData.contactInfo, generateContactInfo, 'Contact Information')}`;
 }
