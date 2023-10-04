@@ -7,6 +7,7 @@ import { promptUserStory } from './src/promptUserStory.js';
 import { promptResourcesUsed } from './src/promptResourcesUsed.js';
 import { promptUsage } from './src/promptUsage.js';
 import { promptContributors } from './src/promptContributors.js'
+import { promptContactInfo } from './src/promptContactInfo.js';
 
 const initializeApp = async () => {
     try {
@@ -32,6 +33,10 @@ const initializeApp = async () => {
 
         if (userResponse.confirmContributors) {
             userResponse = await promptContributors(userResponse);
+        }
+
+        if (userResponse.confirmContactInfo) {
+            userResponse = await promptContactInfo(userResponse);
         }
 
         // Generate the README using userResponse data

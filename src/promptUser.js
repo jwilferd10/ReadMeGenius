@@ -67,25 +67,12 @@ export const promptUser = () => {
         //     message: 'Would you like to include a contributors list?',
         //     default: true,
         // },
-        // {
-        //     // Github Username
-        //     type: 'input',
-        //     name: 'github',
-        //     message: 'Enter your GitHub Username (Required)',
-        //     validate: githubInput => {
-        //         if (githubInput) {
-        //             return true;
-        //         } else {
-        //             console.log('Please enter your GitHub username!');
-        //             return false;
-        //         }
-        //     }
-        // },
-        // {
-        //     // Email Address
-        //     type: 'input',
-        //     name: 'email',
-        //     message: 'Would you like to include your email?',
-        // },
+        {
+            // Contact Information
+            type: 'confirm',
+            name: 'confirmContactInfo',
+            message: 'Would you like to include any contact information?',
+            default: true,
+        }
     ]);
 };

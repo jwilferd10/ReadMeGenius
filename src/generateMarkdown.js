@@ -55,6 +55,13 @@ const generateContributors = (contributorsData) => {
   `;
 }
 
+const generateContactInfo = (contactInfoData) => {
+  return `
+    - GitHub: [${contactInfoData.name}](https://github.com/${contactInfoData.name})
+      - Email: ${contactInfoData.email}
+  `;
+}
+
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
   return `# ${readmeData.title}
@@ -83,6 +90,7 @@ export const generateMarkdown = (readmeData) => {
   ${generateMarkdownSection(readmeData.contributors, generateContributors)}
 
   ## Contact Information:
-  - Github: [${readmeData.github}](https://github.com/${readmeData.github})
-  - Email: ${readmeData.email} `;
+  ${generateMarkdownSection(readmeData.contactInfo, generateContactInfo)}
+  
+  `;
 }
