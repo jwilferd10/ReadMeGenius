@@ -82,7 +82,7 @@ export const generateMarkdown = (readmeData) => {
   ## Contribution:
   ${generateMarkdownSection(readmeData.contributors, generateContributors)}
 
-  ## Additional Info:
+  ## Contact Information:
   - Github: [${readmeData.github}](https://github.com/${readmeData.github})
   - Email: ${readmeData.email} `;
 }
