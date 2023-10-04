@@ -61,11 +61,11 @@ export const generateMarkdown = (readmeData) => {
 
   ## Table of Contents 
   - [Description](#description)
-  - [Installation](#installation)
+  - [User Story](#user-story)
+  - [Resources Used](#resources-used)
   - [Usage](#usage)
-  - [Contribution](#contribution)
-  - [Testing](#testing)
-  - [Additional Info](#additional-info)
+  - [Contributors](#contributors)
+  - [Contact Information](#contact-information)
 
   ## Description
   ${generateMarkdownSection(readmeData.description, generateDescriptionMD)}
@@ -81,9 +81,6 @@ export const generateMarkdown = (readmeData) => {
 
   ## Contribution:
   ${generateMarkdownSection(readmeData.contributors, generateContributors)}
-
-  ## Testing:
-  ${readmeData.testing}
 
   ## Additional Info:
   - Github: [${readmeData.github}](https://github.com/${readmeData.github})

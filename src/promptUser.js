@@ -60,13 +60,13 @@ export const promptUser = () => {
         //     message: 'Would you like to include a Usage section?',
         //     default: true,
         // },
-        {
-            // 
-            type: 'confirm',
-            name: 'confirmContributors',
-            message: 'Would you like to include a contributors list?',
-            default: true,
-        },
+        // {
+        //     // Contributors
+        //     type: 'confirm',
+        //     name: 'confirmContributors',
+        //     message: 'Would you like to include a contributors list?',
+        //     default: true,
+        // },
         // {
         //     // Github Username
         //     type: 'input',

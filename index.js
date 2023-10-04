@@ -30,7 +30,7 @@ const initializeApp = async () => {
             userResponse = await promptUsage(userResponse);
         }
 
-        if(userResponse.confirmContributors) {
+        if (userResponse.confirmContributors) {
             userResponse = await promptContributors(userResponse);
         }
 
