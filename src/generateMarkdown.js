@@ -69,25 +69,46 @@ const generateTableOfContents = (readmeData) => {
   let tableOfContents = '## Table of Contents \n';
 
   // If applicable, generate description
+  if (readmeData.description && readmeData.description.length > 0) {
+    tableOfContents += `- [Description](#description)\n`;
+  }
   // If applicable, generate user story
-  // If applicable, generate resources used
-  // If applicable, generate usage
-  // If applicable, generate contributors
-  // If applicable, generate contact info
+  if (readmeData.userStory && readmeData.userStory.length > 0) {
+    tableOfContents += `- [User Story](#user-story)\n`;
+  }
 
+  // If applicable, generate resources used
+  if (readmeData.resourcesUsed && readmeData.resourcesUsed.length > 0) {
+    tableOfContents += `- [Resources Used](#resources-used)\n`;
+  }
+
+  // If applicable, generate usage
+  if (readmeData.usage && readmeData.usage.length > 0) {
+    tableOfContents += `- [Usage](#usage)\n`;
+  }
+
+  // If applicable, generate contributors
+  if (readmeData.contributors && readmeData.contributors.length > 0) {
+    tableOfContents += `- [Contributors](#contributors)\n`;
+  }
+
+  // If applicable, generate contact info
+  if (readmeData.contactInfo && readmeData.contactInfo.length > 0) {
+    tableOfContents += `- [Contact Information](#contact-information)\n`;
+  }
+
+  return tableOfContents;;
 }
 
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
+
+  // Collect data from generateTableofContents
+  const tableOfContents = generateTableOfContents(readmeData);
+
   return `# ${readmeData.title}
 
-  ## Table of Contents 
-  - [Description](#description)
-  - [User Story](#user-story)
-  - [Resources Used](#resources-used)
-  - [Usage](#usage)
-  - [Contributors](#contributors)
-  - [Contact Information](#contact-information)
+  ${tableOfContents}
 
   ${generateMarkdownSection(readmeData.description, generateDescriptionMD, 'Description')}
 
