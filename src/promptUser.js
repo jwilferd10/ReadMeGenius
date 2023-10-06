@@ -36,21 +36,21 @@ export const promptUser = () => {
             // File Description (Required)
             type: 'confirm',
             name: 'confirmDescription',
-            message: 'Would you like to include a description for your file?',
+            message: 'Would you like to include a Description for your file?',
             default: true,
         },
         {
             // User Story (Optional)
             type: 'confirm', 
             name: 'confirmUserStory',
-            message: 'Would you like to provide a User Story for this file??',
+            message: 'Would you like to provide a User Story for this file?',
             default: true,
         }, 
         {
             // Resources Used (Optional)
             type: 'confirm',
             name: 'confirmResourcesUsed',
-            message: 'Would you like to highlight any resources used?',
+            message: 'Would you like to highlight any Resources Used?',
             default: true,
         },
         {
@@ -64,14 +64,14 @@ export const promptUser = () => {
             // Contributors
             type: 'confirm',
             name: 'confirmContributors',
-            message: 'Would you like to include a contributors list?',
+            message: 'Would you like to include a Contributors list?',
             default: true,
         },
         {
             // Contact Information
             type: 'confirm',
             name: 'confirmContactInfo',
-            message: 'Would you like to include any contact information?',
+            message: 'Would you like to include any Contact Information?',
             default: true,
         }
     ]);
