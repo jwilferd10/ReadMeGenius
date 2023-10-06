@@ -21,49 +21,40 @@ const generateMarkdownSection = (dataArray, templateFunction, sectionHeader) => 
 }
 
 // Generates the Description section
-const generateDescriptionMD = (descriptionData) => {
-  return `
-    ## ${descriptionData.header}
-    ${descriptionData.text}
-  `;
-};
+const generateDescriptionMD = (descriptionData) => `
+  ## ${descriptionData.header}
+  ${descriptionData.text}
+`;
 
 // Create a function that returns the userStory 
-const generateStoryMD = (userStoryData) => {
-  return `
-    - ${userStoryData.when}
-      - ${userStoryData.then}
-  `;
-};
+const generateStoryMD = (userStoryData) => `
+  - ${userStoryData.when}
+    - ${userStoryData.then}
+`;
 
 
 // Create a function that returns resourcesUsed
-const generateResourcesUsed = (resourcesUsedData) => {
-  return `
-    - ${resourcesUsedData.resource}
-  `;
-};
+const generateResourcesUsed = (resourcesUsedData) => `
+  - ${resourcesUsedData.resource}
+`;
 
 // Function to generate Usage markdown
-const generateUsage = (usageData) => {
-  return `
-    ${usageData.usageText}
-  `;
-}
+const generateUsage = (usageData) => `
+  ${usageData.usageText}
+`;
+
 
 // Function to generate contributors list.
-const generateContributors = (contributorsData) => {
-  return `
-    - ${contributorsData.text}
-  `;
-}
+const generateContributors = (contributorsData) => `
+  - ${contributorsData.text}
+`;
 
-const generateContactInfo = (contactInfoData) => {
-  return `
-    - GitHub: [${contactInfoData.name}](https://github.com/${contactInfoData.name})
-      - Email: ${contactInfoData.email}
-  `;
-}
+
+const generateContactInfo = (contactInfoData) => `
+  - GitHub: [${contactInfoData.name}](https://github.com/${contactInfoData.name})
+    - Email: ${contactInfoData.email}
+`;
+
 
 const generateTableOfContents = (readmeData) => {
   let tableOfContents = '## Table of Contents \n';
