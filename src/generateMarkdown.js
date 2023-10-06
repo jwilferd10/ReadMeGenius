@@ -9,16 +9,16 @@ const generateMarkdownSection = (dataArray, templateFunction, sectionHeader) => 
   let sectionMarkdown = '';
 
   // Concatenate the Section Header
-  sectionMarkdown += `## ${sectionHeader}\n`
+  sectionMarkdown += `## ${sectionHeader}\n`;
 
   // Loop through the array and generate markdown for each sub-section
   dataArray.forEach((data) => {
     // Concatenate the markdown sub-sections
     sectionMarkdown += templateFunction(data);
-  })
+  });
 
   return sectionMarkdown;
-}
+};
 
 // Generates the Description section
 const generateDescriptionMD = (descriptionData) => `
@@ -49,13 +49,13 @@ const generateContributors = (contributorsData) => `
   - ${contributorsData.text}
 `;
 
-
+// Generate contact info
 const generateContactInfo = (contactInfoData) => `
   - GitHub: [${contactInfoData.name}](https://github.com/${contactInfoData.name})
     - Email: ${contactInfoData.email}
 `;
 
-
+// Generate a table of content for the README.
 const generateTableOfContents = (readmeData) => {
   let tableOfContents = '## Table of Contents \n';
 
@@ -89,7 +89,7 @@ const generateTableOfContents = (readmeData) => {
   }
 
   return tableOfContents;;
-}
+};
 
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
@@ -112,4 +112,4 @@ export const generateMarkdown = (readmeData) => {
   ${generateMarkdownSection(readmeData.contributors, generateContributors, 'Contributors')}
 
   ${generateMarkdownSection(readmeData.contactInfo, generateContactInfo, 'Contact Information')}`;
-}
+};
