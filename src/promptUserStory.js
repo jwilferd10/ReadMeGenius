@@ -19,14 +19,14 @@ export const promptUserStory = async (readmeData) => {
             // When input
             type: 'input',
             name: 'whenText',
-            message: 'Provide a WHEN statement for this section',
+            message: 'Provide a WHEN statement for this section:',
             validate: whenText => whenText ? true : 'Please provide an input for this section!',
         },
         {
             // Then input
             type: 'input',
             name: 'thenText',
-            message: 'Provide a THEN statement for this section',
+            message: 'Provide a THEN statement for this section:',
             validate: thenText => thenText ? true : 'Please provide an input for this section!',
         },
         {
