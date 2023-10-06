@@ -65,6 +65,18 @@ const generateContactInfo = (contactInfoData) => {
   `;
 }
 
+const generateTableOfContents = (readmeData) => {
+  let tableOfContents = '## Table of Contents \n';
+
+  // If applicable, generate description
+  // If applicable, generate user story
+  // If applicable, generate resources used
+  // If applicable, generate usage
+  // If applicable, generate contributors
+  // If applicable, generate contact info
+
+}
+
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
   return `# ${readmeData.title}
