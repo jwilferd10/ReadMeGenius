@@ -42,8 +42,6 @@ export const promptResourcesUsed = async (readmeData) => {
 
         readmeData.resourcesUsed.push(userResourceObject);
 
-        console.log(userResourceObject);
-
         // Exit out of the loop when false
         if (!userResourcesData.confirmAddResource) {
             break;

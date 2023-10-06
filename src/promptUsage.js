@@ -42,8 +42,6 @@ export const promptUsage = async (readmeData) => {
 
         readmeData.usage.push(userUsageObject);
 
-        console.log(userUsageObject);
-
         // Exit out of the loop when false
         if (!userUsageData.confirmUsage) {
             break;
