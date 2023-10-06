@@ -11,19 +11,20 @@ export const promptContactInfo = async (readmeData) => {
         ===================
     `);
 
+    console.log(`Provide some infomration on how to contact you or someone else.`)
     const contactInfoQuestions = [
         {
             // Github Username
             type: 'input',
             name: 'githubName',
-            message: 'Enter your GitHub Username (Required)',
+            message: 'Enter your GitHub Username:',
             validate: githubName => githubName ? true : 'Please provide a GitHub Username!',
         },
         {
             // Email Address
             type: 'input',
             name: 'email',
-            message: 'Provide an email address!',
+            message: 'Provide an email address:',
             validate: githubName => githubName ? true : 'Please provide an email!',
         },
         {
