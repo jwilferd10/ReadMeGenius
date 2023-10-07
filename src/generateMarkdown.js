@@ -24,36 +24,36 @@ const generateMarkdownSection = (dataArray, templateFunction, sectionHeader) => 
 const generateDescriptionMD = (descriptionData) => `
   ### ${descriptionData.header}
   ${descriptionData.text}
-`;
+`.trim();
 
 // Create a function that returns the userStory 
 const generateStoryMD = (userStoryData) => `
   - ${userStoryData.when}
-    - ${userStoryData.then}
-`;
+  - ${userStoryData.then}
+`.trim();
 
 
 // Create a function that returns resourcesUsed
 const generateResourcesUsed = (resourcesUsedData) => `
   - ${resourcesUsedData.resource}
-`;
+`.trim();
 
 // Function to generate Usage markdown
 const generateUsage = (usageData) => `
   ${usageData.usageText}
-`;
+`.trim();
 
 
 // Function to generate contributors list.
 const generateContributors = (contributorsData) => `
   - ${contributorsData.text}
-`;
+`.trim();
 
 // Generate contact info
 const generateContactInfo = (contactInfoData) => `
   - GitHub: [${contactInfoData.name}](https://github.com/${contactInfoData.name})
-    - Email: ${contactInfoData.email}
-`;
+  - Email: ${contactInfoData.email}
+`.trim();
 
 // Generate a table of content for the README.
 const generateTableOfContents = (readmeData) => {
@@ -88,7 +88,7 @@ const generateTableOfContents = (readmeData) => {
     tableOfContents += `- [Contact Information](#contact-information)\n`;
   }
 
-  return tableOfContents;;
+  return tableOfContents;
 };
 
 // function to generate markdown for README
