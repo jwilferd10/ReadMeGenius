@@ -22,7 +22,7 @@ const generateMarkdownSection = (dataArray, templateFunction, sectionHeader) => 
 
 // Generates the Description section
 const generateDescriptionMD = (descriptionData) => `
-  ## ${descriptionData.header}
+  ### ${descriptionData.header}
   ${descriptionData.text}
 `;
 
