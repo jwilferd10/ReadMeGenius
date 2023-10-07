@@ -98,6 +98,7 @@ export const generateMarkdown = (readmeData) => {
   const tableOfContents = generateTableOfContents(readmeData);
 
   return `# ${readmeData.title}
+  ### ${readmeData.subtitleText}
 
   ${tableOfContents}
 

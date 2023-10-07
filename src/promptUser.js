@@ -21,7 +21,7 @@ export const promptUser = () => {
         {
             // Confirm file Subtitle (Optional)
             type: 'confirm',
-            name: 'fileTitle',
+            name: 'subTitle',
             message: 'Would you like to include a subtitle underneath your file name?',
             default: true,
         },
@@ -30,7 +30,7 @@ export const promptUser = () => {
             type: 'input',
             name: 'subtitleText',
             message: 'Enter your desired subtitle:',
-            when: ({ fileTitle }) => fileTitle,
+            when: ({ subTitle }) => subTitle,
         },
         {
             // File Description (Required)
