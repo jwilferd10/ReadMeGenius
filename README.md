@@ -1,12 +1,12 @@
 # ReadMeGenius
 
 ## 📂 Table of Contents 
-- [Description](#description)
-- [User Story](#user-story)
-- [Resources Used](#resources-used)
-- [Usage](#usage)
-- [Contributors](#contributors)
-- [Contact Information](#contact-information)
+- [Description](#wave-description)
+- [User Story](#book-user-story)
+- [Resources Used](#floppy_disk-resources-used)
+- [Usage](#minidisc-usage)
+- [Contributors](#paperclip-contributors)
+- [Contact Information](#e-mail-contact-information)
 
 ## 👋 Description
 
@@ -59,7 +59,7 @@ So much for checking out ReadMeGenius, my intention is that it proves helpful to
 - NPM (Node Package Manager)
 - JavaScript
 
-## Usage
+## 💽 Usage
 
 Coming Soon!
 
