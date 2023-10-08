@@ -52,10 +52,10 @@ So much for checking out ReadMeGenius, my intention is that it proves helpful to
   - THEN I am taken to the corresponding section of the README
 
 ## :floppy_disk: Resources Used
-
+- JavaScript
 - Node.js
 - NPM (Node Package Manager)
-- JavaScript
+- Inquirer (v. ^9.2.8)
 
 ## :minidisc: Usage
 To get started with ReadMeGenius, follow these steps:
