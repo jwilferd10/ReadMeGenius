@@ -1,5 +1,6 @@
 # ReadMeGenius
-## Table of Contents 
+
+## 📂 Table of Contents 
 - [Description](#description)
 - [User Story](#user-story)
 - [Resources Used](#resources-used)
@@ -7,9 +8,9 @@
 - [Contributors](#contributors)
 - [Contact Information](#contact-information)
 
-## Description
+## 👋 Description
 
-### Build Your Documentation
+### 🛠️ Build Your Documentation
 In the realm of software development, effective documentation is paramount. Enter ReadMeGenius, your trusted ally in project documentation. As a meticulously designed markdown file generator, ReadMeGenius empowers you to streamline the documentation process with ease. Elevate your project's professionalism and ensure comprehensive documentation with this invaluable tool.
 
 ### 🚀 Features
@@ -22,6 +23,11 @@ In the realm of software development, effective documentation is paramount. Ente
 ### 🌐 Open
 ReadMeGenius is an open-source project built with the goal of making project documentation easier and more accessible to everyone. My commitment to openness means that this repository is open to the public, inviting exploration and encouraging creativity. Please feel free to delve into the codebase, generate markdown files, fork the project, and customize it to suit your specific needs. 
 
+### 💭 Developer Notes
+ReadMeGenius is not only a valuable tool but is also an educational project. During the main development process, I used the opportunity to reinforce coding concepts and even expand upon creative ideas, adding more content to the final product. ReadMeGenius has provided me with more hands-on experience in using Inquirer and Node. 
+
+### 🙏 Thank You!
+So much for checking out ReadMeGenius, my intention is that it proves helpful to you in creating documentation for your own projects. Furthermore I hope the code base itself is able to help you out however possible. Please feel free to fork this repo, I hope you find ReadMeGenius a helpful addition to your development toolkit and happy coding! 
 
 ## 📖 User Story
 
