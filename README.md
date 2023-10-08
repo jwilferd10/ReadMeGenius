@@ -11,7 +11,7 @@
 ## 👋 Description
 
 ### 🛠️ Build Your Documentation
-In the realm of software development, effective documentation is paramount. Enter ReadMeGenius, your trusted ally in project documentation. As a meticulously designed markdown file generator, ReadMeGenius empowers you to streamline the documentation process with ease. Elevate your project's professionalism and ensure comprehensive documentation with this invaluable tool.
+In the realm of software development, effective documentation is paramount. Enter ReadMeGenius, your trusted ally in project documentation. As a meticulously designed markdown file generator, ReadMeGenius empowers you to streamline the documentation process with ease. Elevate your project's professionalism and ensure comprehensive documentation with this invaluable tool. Here's an interesting tidbit, the baseline for this README was *generated* by this very project! 
 
 ### 🚀 Features
 - **Guided README Creation**: Easily create README files by answering guided questions.
@@ -53,7 +53,7 @@ So much for checking out ReadMeGenius, my intention is that it proves helpful to
   - THEN I am taken to the corresponding section of the README
 
 
-## 💾 esources Used
+## 💾 Resources Used
 
 - Node.js
 - NPM (Node Package Manager)
@@ -66,7 +66,6 @@ Coming Soon!
 ## 📎 Contributors
 
 - jwilferd10
-
 
 ## 📧 Contact Information
 
