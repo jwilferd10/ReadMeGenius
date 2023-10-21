@@ -24,7 +24,13 @@ In the realm of software development, effective documentation is paramount. Ente
 ReadMeGenius is an open-source project built with the goal of making project documentation easier and more accessible to everyone. My commitment to openness means that this repository is open to the public, inviting exploration and encouraging creativity. Please feel free to delve into the codebase, generate markdown files, fork the project, and customize it to suit your specific needs. 
 
 ### 💭 Developer Notes
-ReadMeGenius is not only a valuable tool but is also an educational project. During the main development process, I used the opportunity to reinforce coding concepts and even expand upon creative ideas, adding more content to the final product. ReadMeGenius has provided me with more hands-on experience in using Inquirer and Node. 
+- ReadMeGenius' Inquirer package has been updated to use version `^9.2.8.`
+- Asynchronous operations now utilize Async/Await expressions, moving away from promises.
+- Users now have the ability to add multiple inputs within each section.
+
+The creation of ReadMeGenius was an educational journey. Throughout the development process, I used the opportunity to solidify my coding knowledge, building upon the concepts I had previously learned from a different project, PortfolioForge. Simultaneously, I used this experience to introduce new ideas and improve the content of this markdown generator.
+
+In the future I'd like to create a more extensive version of ReadMeGenius that allows users to add more to their markdown files. Such as images, bullet points, and so on.
 
 ### 🙏 Thank You!
 So much for checking out ReadMeGenius, my intention is that it proves helpful to you in creating documentation for your own projects. Furthermore I hope the code base itself is able to help you out however possible. Please feel free to fork this repo, I hope you find ReadMeGenius a helpful addition to your development toolkit and happy coding! 
