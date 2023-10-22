@@ -1,3 +1,7 @@
+const regexTrim = (data) => {
+  return data.replace(/^(?:\t| {2,})/gm, '');
+};
+
 // Create a reusable function that generates new paragraph content
 const generateMarkdownSection = (dataArray, templateFunction, sectionHeader) => {
   // Return an empty string if there are no descriptions
