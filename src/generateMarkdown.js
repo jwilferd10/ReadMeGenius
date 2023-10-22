@@ -25,33 +25,52 @@ const generateMarkdownSection = (dataArray, templateFunction, sectionHeader) => 
 };
 
 // Generates the Description section
-const generateDescriptionMD = (descriptionData) => `
-  ### ${descriptionData.header}
-  ${descriptionData.text}
-`.trim();
+const generateDescriptionMD = (descriptionData) => {
+  const descriptionContent = `
+    ### ${descriptionData.header}
+    ${descriptionData.text}
+  `.trim();
+
+  return regexTrim(descriptionContent);
+};
 
 // Create a function that returns the userStory 
-const generateStoryMD = (userStoryData) => `
-  - ${userStoryData.when}
-  - ${userStoryData.then}
-`.trim();
+const generateStoryMD = (userStoryData) => {
+  const userStoryContent = `
+    - ${userStoryData.when}
+    - ${userStoryData.then}
+  `.trim();
 
+  return regexTrim(userStoryContent);
+};
 
 // Create a function that returns resourcesUsed
-const generateResourcesUsed = (resourcesUsedData) => `
-  - ${resourcesUsedData.resource}
-`.trim();
+const generateResourcesUsed = (resourcesUsedData) => {
+  const resourcesContent = `
+    - ${resourcesUsedData.resource}
+  `.trim();
+
+  return regexTrim(resourcesContent);
+};
 
 // Function to generate Usage markdown
-const generateUsage = (usageData) => `
-  ${usageData.usageText}
-`.trim();
+const generateUsage = (usageData) => { 
+  const usageContent = `
+    ${usageData.usageText}
+  `.trim();
+
+  return regexTrim(usageContent);
+};
 
 
 // Function to generate contributors list.
-const generateContributors = (contributorsData) => `
-  - ${contributorsData.text}
-`.trim();
+const generateContributors = (contributorsData) => {
+  const contributorsContent = `
+    - ${contributorsData.text}
+  `.trim();
+
+  return regexTrim(contributorsContent);
+};
 
 // Generate contact info
 const generateContactInfo = (contactInfoData) => `
