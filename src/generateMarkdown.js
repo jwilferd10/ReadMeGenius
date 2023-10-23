@@ -25,52 +25,33 @@ const generateMarkdownSection = (dataArray, templateFunction, sectionHeader) => 
 };
 
 // Generates the Description section
-const generateDescriptionMD = (descriptionData) => {
-  const descriptionContent = `
-    ### ${descriptionData.header}
-    ${descriptionData.text}
-  `.trim();
-
-  return regexTrim(descriptionContent);
-};
+const generateDescriptionMD = (descriptionData) => `
+  ### ${descriptionData.header}
+  ${descriptionData.text}
+`.trim();
 
 // Create a function that returns the userStory 
-const generateStoryMD = (userStoryData) => {
-  const userStoryContent = `
-    - ${userStoryData.when}
-    - ${userStoryData.then}
-  `.trim();
+const generateStoryMD = (userStoryData) => `
+  - ${userStoryData.when}
+  - ${userStoryData.then}
+`.trim();
 
-  return regexTrim(userStoryContent);
-};
 
 // Create a function that returns resourcesUsed
-const generateResourcesUsed = (resourcesUsedData) => {
-  const resourcesContent = `
-    - ${resourcesUsedData.resource}
-  `.trim();
-
-  return regexTrim(resourcesContent);
-};
+const generateResourcesUsed = (resourcesUsedData) => `
+  - ${resourcesUsedData.resource}
+`.trim();
 
 // Function to generate Usage markdown
-const generateUsage = (usageData) => { 
-  const usageContent = `
-    ${usageData.usageText}
-  `.trim();
-
-  return regexTrim(usageContent);
-};
+const generateUsage = (usageData) => `
+  ${usageData.usageText}
+`.trim();
 
 
 // Function to generate contributors list.
-const generateContributors = (contributorsData) => {
-  const contributorsContent = `
-    - ${contributorsData.text}
-  `.trim();
-
-  return regexTrim(contributorsContent);
-};
+const generateContributors = (contributorsData) => `
+  - ${contributorsData.text}
+`.trim();
 
 // Generate contact info
 const generateContactInfo = (contactInfoData) => `
@@ -114,26 +95,31 @@ const generateTableOfContents = (readmeData) => {
   return tableOfContents;
 };
 
+
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
 
   // Collect data from generateTableofContents
   const tableOfContents = generateTableOfContents(readmeData);
 
-  return `# ${readmeData.title}
-  ### ${readmeData.subtitleText}
+  const markdownContent = `
+    # ${readmeData.title}
+    ### ${readmeData.subtitleText}
 
-  ${tableOfContents}
+    ${tableOfContents}
 
-  ${generateMarkdownSection(readmeData.description, generateDescriptionMD, 'Description')}
+    ${generateMarkdownSection(readmeData.description, generateDescriptionMD, 'Description')}
 
-  ${generateMarkdownSection(readmeData.userStory, generateStoryMD, 'User Story')}
+    ${generateMarkdownSection(readmeData.userStory, generateStoryMD, 'User Story')}
 
-  ${generateMarkdownSection(readmeData.resourcesUsed, generateResourcesUsed, 'Resources Used')}
+    ${generateMarkdownSection(readmeData.resourcesUsed, generateResourcesUsed, 'Resources Used')}
 
-  ${generateMarkdownSection(readmeData.usage, generateUsage, 'Usage')}
+    ${generateMarkdownSection(readmeData.usage, generateUsage, 'Usage')}
 
-  ${generateMarkdownSection(readmeData.contributors, generateContributors, 'Contributors')}
+    ${generateMarkdownSection(readmeData.contributors, generateContributors, 'Contributors')}
 
-  ${generateMarkdownSection(readmeData.contactInfo, generateContactInfo, 'Contact Information')}`;
+    ${generateMarkdownSection(readmeData.contactInfo, generateContactInfo, 'Contact Information')}
+  `;
+
+  return regexTrim(markdownContent);
 };
