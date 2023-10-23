@@ -30,6 +30,12 @@ ReadMeGenius is an open-source project built with the goal of making project doc
 
 The creation of ReadMeGenius was an educational journey. Throughout the development process, I used the opportunity to solidify my coding knowledge, building upon the concepts I had previously learned from a different project, PortfolioForge. Simultaneously, I used this experience to introduce new ideas and improve the content of this markdown generator.
 
+For example: 
+1. generateMarkdown.js utilizes regex and .replace() to remove extra spacing
+  - `data.replace(/^(?:\t| {2,})/gm, '')`
+2. Using newly learned syntax to create a new line for each section/subsection
+  - `\n`
+
 In the future I'd like to create a more extensive version of ReadMeGenius that allows users to add more to their markdown files. Such as images, bullet points, and so on.
 
 ### 🙏 Thank You!
