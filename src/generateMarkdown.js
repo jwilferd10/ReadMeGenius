@@ -98,13 +98,16 @@ const generateTableOfContents = (readmeData) => {
 
 // function to generate markdown for README
 export const generateMarkdown = (readmeData) => {
+  if (readmeData.subtitleText === false) {
+    return '';
+  }
 
   // Collect data from generateTableofContents
   const tableOfContents = generateTableOfContents(readmeData);
 
   const markdownContent = `
     # ${readmeData.title}
-    ### ${readmeData.subtitleText}
+    ${readmeData.subtitleText ? `### ${readmeData.subtitleText}` : ''}
 
     ${tableOfContents}
 

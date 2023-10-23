@@ -24,6 +24,13 @@ export const promptUser = () => {
             name: 'subTitle',
             message: 'Would you like to include a subtitle underneath your file name?',
             default: true,
+            validate: ({ subTitle }) => {
+                if (subTitle) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
         {
             // Prompt subtitle iput
