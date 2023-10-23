@@ -1,4 +1,5 @@
 # ReadMeGenius
+### Elevate Your Documentation Game
 
 ## 📂 Table of Contents 
 - [Description](#wave-description)
