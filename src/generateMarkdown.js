@@ -112,26 +112,7 @@ export const generateMarkdown = (readmeData) => {
   const usageSection = generateMarkdownSection(readmeData.usage, generateUsage, 'Usage');
   const contributorsSection = generateMarkdownSection(readmeData.contributors, generateContributors, 'Contributors');
   const contactInfoSection = generateMarkdownSection(readmeData.contactInfo, generateContactInfo, 'Contact Information');
-
-  // const markdownContent = `
-  //   # ${readmeData.title}
-  //   ${readmeData.subtitleText ? `### ${readmeData.subtitleText}` : ''}
-
-  //   ${tableOfContents}
-
-  //   ${generateMarkdownSection(readmeData.description, generateDescriptionMD, 'Description')}
-
-  //   ${generateMarkdownSection(readmeData.userStory, generateStoryMD, 'User Story')}
-
-  //   ${generateMarkdownSection(readmeData.resourcesUsed, generateResourcesUsed, 'Resources Used')}
-
-  //   ${generateMarkdownSection(readmeData.usage, generateUsage, 'Usage')}
-
-  //   ${generateMarkdownSection(readmeData.contributors, generateContributors, 'Contributors')}
-
-  //   ${generateMarkdownSection(readmeData.contactInfo, generateContactInfo, 'Contact Information')}
-  // `;
-
+  
   // Concatenate sections together, trying to remove the empty sections
   const markdownSections = [
     `# ${readmeData.title}`,
