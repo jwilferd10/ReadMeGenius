@@ -11,7 +11,11 @@ export const promptContactInfo = async (readmeData) => {
         ===================
     `);
 
-    console.log(`Provide some infomration on how to contact you or someone else.`)
+    console.log(`
+        Provide some infomration on how to contact you or someone else.
+        ---------------------------------------------------------------
+    `);
+    
     const contactInfoQuestions = [
         {
             // Github Username

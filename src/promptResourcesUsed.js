@@ -12,7 +12,10 @@ export const promptResourcesUsed = async (readmeData) => {
         =======================
     `);
 
-    console.log(`Provide any resources used for your project.`)
+    console.log(`
+        Provide any resources used for your project.
+        --------------------------------------------
+    `);
 
     const resourcesQuestions = [
         {

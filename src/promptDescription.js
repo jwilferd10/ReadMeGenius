@@ -12,7 +12,10 @@ export const promptDescription = async (readmeData) => {
         ===================
     `);
 
-    console.log(`Provide some details and help users further understand your project.`);
+    console.log(`
+        Provide some details and help users further understand your project
+        -------------------------------------------------------------------
+    `);
     const descriptionQuestions = [
         {
             // Description Header

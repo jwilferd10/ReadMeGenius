@@ -12,7 +12,10 @@ export const promptUserStory = async (readmeData) => {
         ====================
     `);
 
-    console.log('A "WHEN" statement in a user story specifies the triggering action, while a "THEN" statement describes the expected outcome.')
+    console.log(`
+    A "WHEN" statement in a user story specifies the triggering action, while a "THEN" statement describes the expected outcome
+    ---------------------------------------------------------------------------------------------------------------------------
+    `);
 
     const userStoryQuestions = [
         {

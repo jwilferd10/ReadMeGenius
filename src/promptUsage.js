@@ -12,7 +12,10 @@ export const promptUsage = async (readmeData) => {
         =================================
     `);
 
-    console.log(`Creating a 'Usage' section will help people easily use your project.`);
+    console.log(`
+        Creating a 'Usage' section will help people easily use your project.
+        -------------------------------------------------------------------
+    `);
 
     const usageQuestions = [
         {

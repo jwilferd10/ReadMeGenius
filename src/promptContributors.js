@@ -11,7 +11,11 @@ export const promptContributors = async (readmeData) => {
         =================
     `);
 
-    console.log(`Provide a contributors list and highlight people helping with this project!`);
+    console.log(`
+        Provide a contributors list and highlight people helping with this project!
+        ---------------------------------------------------------------------------
+    `);
+    
     const contributorsQuestions = [
         {
             // Contributors name input

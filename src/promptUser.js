@@ -9,7 +9,11 @@ export const promptUser = () => {
         ===================================================
     `);
 
-    console.log("Let's start with a few questions:")
+    console.log(`
+        Let's start with a few questions:
+        ---------------------------------
+    `);
+    
     return inquirer.prompt([
         {
             // File Name (Required)
