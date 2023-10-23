@@ -27,37 +27,37 @@ const generateMarkdownSection = (dataArray, templateFunction, sectionHeader) => 
 // Generates the Description section
 const generateDescriptionMD = (descriptionData) => `
   ### ${descriptionData.header}
-  ${descriptionData.text}
-`.trim();
+  ${descriptionData.text}\n`
+;
 
 // Create a function that returns the userStory 
 const generateStoryMD = (userStoryData) => `
   - ${userStoryData.when}
-  - ${userStoryData.then}
-`.trim();
+  - ${userStoryData.then}\n`
+;
 
 
 // Create a function that returns resourcesUsed
 const generateResourcesUsed = (resourcesUsedData) => `
-  - ${resourcesUsedData.resource}
-`.trim();
+  - ${resourcesUsedData.resource}\n`
+;
 
 // Function to generate Usage markdown
 const generateUsage = (usageData) => `
-  ${usageData.usageText}
-`.trim();
+  ${usageData.usageText}\n`
+;
 
 
 // Function to generate contributors list.
 const generateContributors = (contributorsData) => `
-  - ${contributorsData.text}
-`.trim();
+  - ${contributorsData.text}\n`
+;
 
 // Generate contact info
 const generateContactInfo = (contactInfoData) => `
   - GitHub: [${contactInfoData.name}](https://github.com/${contactInfoData.name})
-  - Email: ${contactInfoData.email}
-`.trim();
+  - Email: ${contactInfoData.email}\n`
+;
 
 // Generate a table of content for the README.
 const generateTableOfContents = (readmeData) => {
@@ -105,24 +105,47 @@ export const generateMarkdown = (readmeData) => {
   // Collect data from generateTableofContents
   const tableOfContents = generateTableOfContents(readmeData);
 
-  const markdownContent = `
-    # ${readmeData.title}
-    ${readmeData.subtitleText ? `### ${readmeData.subtitleText}` : ''}
+  // Collect data from each section of a README File
+  const descriptionSection = generateMarkdownSection(readmeData.description, generateDescriptionMD, 'Description');
+  const userStorySection = generateMarkdownSection(readmeData.userStory, generateStoryMD, 'User Story');
+  const resourcesUsedSection = generateMarkdownSection(readmeData.resourcesUsed, generateResourcesUsed, 'Resources Used');
+  const usageSection = generateMarkdownSection(readmeData.usage, generateUsage, 'Usage');
+  const contributorsSection = generateMarkdownSection(readmeData.contributors, generateContributors, 'Contributors');
+  const contactInfoSection = generateMarkdownSection(readmeData.contactInfo, generateContactInfo, 'Contact Information');
 
-    ${tableOfContents}
+  // const markdownContent = `
+  //   # ${readmeData.title}
+  //   ${readmeData.subtitleText ? `### ${readmeData.subtitleText}` : ''}
 
-    ${generateMarkdownSection(readmeData.description, generateDescriptionMD, 'Description')}
+  //   ${tableOfContents}
 
-    ${generateMarkdownSection(readmeData.userStory, generateStoryMD, 'User Story')}
+  //   ${generateMarkdownSection(readmeData.description, generateDescriptionMD, 'Description')}
 
-    ${generateMarkdownSection(readmeData.resourcesUsed, generateResourcesUsed, 'Resources Used')}
+  //   ${generateMarkdownSection(readmeData.userStory, generateStoryMD, 'User Story')}
 
-    ${generateMarkdownSection(readmeData.usage, generateUsage, 'Usage')}
+  //   ${generateMarkdownSection(readmeData.resourcesUsed, generateResourcesUsed, 'Resources Used')}
 
-    ${generateMarkdownSection(readmeData.contributors, generateContributors, 'Contributors')}
+  //   ${generateMarkdownSection(readmeData.usage, generateUsage, 'Usage')}
 
-    ${generateMarkdownSection(readmeData.contactInfo, generateContactInfo, 'Contact Information')}
-  `;
+  //   ${generateMarkdownSection(readmeData.contributors, generateContributors, 'Contributors')}
+
+  //   ${generateMarkdownSection(readmeData.contactInfo, generateContactInfo, 'Contact Information')}
+  // `;
+
+  // Concatenate sections together, trying to remove the empty sections
+  const markdownSections = [
+    `# ${readmeData.title}`,
+    readmeData.subtitleText ? `### ${readmeData.subtitleText}\n` : '',
+    tableOfContents,
+    descriptionSection,
+    userStorySection,
+    resourcesUsedSection,
+    usageSection,
+    contributorsSection,
+    contactInfoSection
+  ];
+
+  const markdownContent = markdownSections.filter(section => section.trim() !== '').join('\n');
 
   return regexTrim(markdownContent);
 };
